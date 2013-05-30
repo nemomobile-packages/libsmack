@@ -1,0 +1,30 @@
+Name: libsmack
+Summary: SMACK Libraries
+Version: 2.0.0
+Release: 1
+Group: System/Base
+License: LGPLv2
+URL: http://meego.gitorious.org/meego-platform-security
+Sources:
+    - "%{name}-%{version}.tar.bz2"
+Description: |
+    These are the userland libraries and tools for SMACK.
+PkgConfigBR:
+    - check
+PkgBR:
+    - libattr-devel
+    - uthash-devel
+    - doxygen
+SetupOptions: -q -n %{name}-%{version}/%{name}
+Configure: reconfigure
+SubPackages:
+    - Name: devel
+      Summary: Development files for SMACK userland tools
+      Group: Development/Libraries
+      Description: |
+          Development headers for SMACK userland tools.
+    - Name: docs
+      Summary: Documentation for SMACK userland tools
+      Group: Development/Libraries
+      Description: |
+          Documentation for SMACK userland tools.
